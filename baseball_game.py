@@ -34,7 +34,7 @@ def is_digit(user_input_number:str)->bool:
     if user_input_number.isdigit():
         result = True
     else:
-        reseult = False
+        result = False
 
     # ==================================
     return result
@@ -287,7 +287,6 @@ def main():
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
     while True:
-        
         user_input = input('Input guess number: ')
         if user_input == "0":
             break
@@ -305,11 +304,14 @@ def main():
                         break
                     else:
                         print("Wrong Input")
+                if flag:
+                    break
+                else:
+                    random_number = get_not_duplicated_three_digit_number()
+                    print("Random Number is : ", random_number)                
             else:
                 print(f"Strikes : {res[0]}, Balls : {res[1]}")
-                
-            if flag:
-                break
+
         else:
             print("Wrong Input")
     # ==================================
