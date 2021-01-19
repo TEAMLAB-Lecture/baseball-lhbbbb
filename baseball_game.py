@@ -162,9 +162,8 @@ def get_not_duplicated_three_digit_number()->int:
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     # get_random_number() 함수를 사용하여 random number 생성
-    num = str(get_random_number())
-    
     while True:
+        num = str(get_random_number())
         if not is_duplicated_number(num):
             result = num
             break
@@ -290,13 +289,12 @@ def main():
         user_input = input('Input guess number : ')
         if user_input == "0":
             break
-        ## 숫자 대신 문자를 입력할 경우
         if is_validated_number(user_input):
             res = get_strikes_or_ball(user_input, random_number)
             flag = False
             if res[0] == 3:
                 while True:
-                    ans = input('You win, one more(Y/N)?')
+                    ans = input('You win, one more(Y/N) ?')
                     if is_yes(ans):
                         break
                     elif is_no(ans):
@@ -311,7 +309,6 @@ def main():
                     print("Random Number is : ", random_number)                
             else:
                 print(f"Strikes : {res[0]} , Balls : {res[1]}")
-
         else:
             print("Wrong Input, Input again")
     # ==================================
