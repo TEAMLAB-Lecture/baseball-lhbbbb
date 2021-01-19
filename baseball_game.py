@@ -296,7 +296,7 @@ def main():
             flag = False
             if res[0] == 3:
                 while True:
-                    ans = input('You win, one more(Y/N) ? ')
+                    ans = input('You win, one more(Y/N)?')
                     if is_yes(ans):
                         break
                     elif is_no(ans):
