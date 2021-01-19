@@ -199,7 +199,7 @@ def get_strikes_or_ball(user_input_number:str, random_number:str)->list:
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    result = [0 ,0]
+    result = [0,0]
     for i in range(3):
         if user_input_number[i] == random_number[i]:
             result[0] += 1
@@ -292,25 +292,28 @@ def main():
         if is_validated_number(user_input):
             res = get_strikes_or_ball(user_input, random_number)
             flag = False
+            print(f"Strikes : {res[0]} , Balls : {res[1]}")
             if res[0] == 3:
                 while True:
                     ans = input('You win, one more(Y/N) ?')
+                    if ans == "0":
+                        flag = True
+                        break
                     if is_yes(ans):
                         break
                     elif is_no(ans):
                         flag = True
                         break
                     else:
-                        print("Wrong Input, Input again")
+                        print('Wrong Input, Input again')
                 if flag:
                     break
                 else:
                     random_number = get_not_duplicated_three_digit_number()
                     print("Random Number is : ", random_number)                
-            else:
-                print(f"Strikes : {res[0]} , Balls : {res[1]}")
+                
         else:
-            print("Wrong Input, Input again")
+            print('Wrong Input, Input again')
     # ==================================
     print("Thank you for using this program")
     print("End of the Game")

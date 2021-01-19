@@ -133,7 +133,7 @@ class TestBaseballGame(unittest.TestCase):
         input_list.append("3orio2kr3o")
 
         input_list.append("No")
-
+        
         with patch('builtins.input', side_effect=input_list):
             with patch('sys.stdout', new=StringIO()) as fakeOutput:
                 bg.main()
